@@ -320,34 +320,101 @@ li {
   color: var(--ink-soft);
 }
 
-.story-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.story-card {
+.story-board-wrap {
+  overflow-x: auto;
   border: 2px solid var(--line);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 14px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.84);
 }
 
-.story-ep {
-  display: inline-block;
-  margin: 0 0 8px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 2px solid rgba(31, 41, 72, 0.12);
-  background: rgba(255, 255, 255, 0.9);
+.story-board {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 540px;
+}
+
+.story-board th,
+.story-board td {
+  padding: 11px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(31, 41, 72, 0.1);
+}
+
+.story-board th {
+  background: linear-gradient(180deg, #f8f2ff 0%, #f0f6ff 100%);
   font-weight: 700;
 }
 
-.story-text {
+.story-board tbody tr:hover {
+  background: rgba(140, 207, 251, 0.12);
+}
+
+.story-link {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.story-link:hover {
+  text-decoration: underline;
+}
+
+.story-note {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+}
+
+body.story-view {
+  background:
+    radial-gradient(900px 500px at -15% -8%, rgba(255, 216, 97, 0.28), transparent 56%),
+    radial-gradient(900px 500px at 115% 20%, rgba(140, 207, 251, 0.28), transparent 56%),
+    linear-gradient(165deg, #f6fbff 0%, #f7f4ff 48%, #fff4d6 100%);
+}
+
+.story-page {
+  position: relative;
+  z-index: 1;
+  width: min(860px, 92vw);
+  margin: 34px auto 52px;
+}
+
+.story-page .card {
+  margin-bottom: 14px;
+}
+
+.story-title {
+  margin-bottom: 6px;
+}
+
+.story-meta {
   margin: 0;
   color: var(--ink-soft);
-  line-height: 1.35;
+  font-weight: 700;
+}
+
+.story-content {
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.story-content p {
+  margin: 0 0 12px;
+}
+
+.story-placeholder {
+  border-left: 4px solid rgba(31, 41, 72, 0.22);
+  padding-left: 10px;
+  color: var(--ink-soft);
+}
+
+.story-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.story-nav .button {
+  min-width: 138px;
 }
 
 .games-help {
@@ -583,8 +650,7 @@ li {
 
 @media (max-width: 760px) {
   .grid,
-  .games-grid,
-  .story-grid {
+  .games-grid {
     grid-template-columns: 1fr;
   }
 
@@ -599,5 +665,13 @@ li {
 
   .button-row {
     width: 100%;
+  }
+
+  .story-board {
+    min-width: 470px;
+  }
+
+  .story-page {
+    margin-top: 24px;
   }
 }
