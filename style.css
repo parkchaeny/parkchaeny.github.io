@@ -315,6 +315,17 @@ li {
     var(--card);
 }
 
+.series-title {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 2px solid rgba(31, 41, 72, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  color: var(--ink);
+}
+
 .story-help {
   margin: 0 0 12px;
   color: var(--ink-soft);
@@ -380,6 +391,10 @@ body.story-view {
 
 .story-page .card {
   margin-bottom: 14px;
+}
+
+.story-page .series-title {
+  margin-bottom: 8px;
 }
 
 .story-title {
