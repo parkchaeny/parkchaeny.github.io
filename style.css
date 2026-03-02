@@ -22,6 +22,11 @@ body {
   padding: 0;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   min-height: 100vh;
   font-family: "Gaegu", cursive;
@@ -669,9 +674,35 @@ body.story-view {
     grid-template-columns: 1fr;
   }
 
+  .page {
+    width: 94vw;
+  }
+
   .card {
     padding: 18px;
     border-radius: 22px;
+  }
+
+  h1 {
+    font-size: clamp(1.72rem, 7.5vw, 2.2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 5.8vw, 1.62rem);
+  }
+
+  h3 {
+    font-size: clamp(1.08rem, 5vw, 1.3rem);
+  }
+
+  p,
+  li,
+  span,
+  a,
+  button,
+  .story-board th,
+  .story-board td {
+    font-size: 0.98rem;
   }
 
   .button {
@@ -683,7 +714,28 @@ body.story-view {
   }
 
   .story-board {
-    min-width: 470px;
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .story-board th,
+  .story-board td {
+    padding: 9px 8px;
+  }
+
+  .story-board th:nth-child(1),
+  .story-board td:nth-child(1) {
+    width: 56px;
+  }
+
+  .story-board th:nth-child(2),
+  .story-board td:nth-child(2) {
+    overflow-wrap: anywhere;
+  }
+
+  .story-nav .button {
+    min-width: 0;
+    flex: 1 1 100%;
   }
 
   .story-page {
