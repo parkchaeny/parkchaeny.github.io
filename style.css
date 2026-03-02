@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --sky: #8bd7ff;
   --sun: #ffd56a;
   --mint: #90f1d0;
@@ -66,7 +66,7 @@ body {
 .page {
   position: relative;
   z-index: 1;
-  width: min(980px, 92vw);
+  width: min(1080px, 92vw);
   margin: 40px auto 50px;
   display: grid;
   gap: 18px;
@@ -89,7 +89,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: "Jua", sans-serif;
   margin: 0 0 10px;
   line-height: 1.25;
@@ -103,11 +104,16 @@ h2 {
   font-size: clamp(1.45rem, 3.3vw, 2rem);
 }
 
+h3 {
+  font-size: clamp(1.2rem, 2.8vw, 1.55rem);
+}
+
 p,
 li,
 span,
-a {
-  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+a,
+button {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
 .badge {
@@ -139,6 +145,7 @@ a {
   padding: 9px 14px;
   border-radius: 14px;
   transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -165,20 +172,127 @@ li {
   margin-bottom: 6px;
 }
 
-.timeline {
+.games-help {
+  margin: 0 0 12px;
+}
+
+.games-grid {
   display: grid;
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
-.timeline div {
-  background: rgba(255, 213, 106, 0.26);
+.game-panel {
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(37, 50, 74, 0.15);
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.game-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.game-tip {
+  margin: 0 0 8px;
+}
+
+.game-btn {
+  margin-bottom: 10px;
+}
+
+.mole-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.mole-hole {
+  min-height: 58px;
+  border-radius: 12px;
+  border: 2px solid rgba(37, 50, 74, 0.2);
+  background: #eff4ff;
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.mole-hole.active {
+  background: var(--peach);
+  transform: scale(1.02);
+}
+
+.mole-hole:focus-visible,
+.button:focus-visible,
+.reaction-box:focus-visible,
+.balloon:focus-visible {
+  outline: 3px solid #4f74ff;
+  outline-offset: 2px;
+}
+
+.reaction-box {
+  width: 100%;
+  min-height: 110px;
   border-radius: 14px;
-  padding: 12px;
+  border: 2px solid rgba(37, 50, 74, 0.2);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.timeline span {
-  font-family: "Jua", sans-serif;
-  margin-right: 10px;
+.reaction-box.waiting {
+  background: #eef2ff;
+}
+
+.reaction-box.ready {
+  background: var(--mint);
+}
+
+.reaction-box.too-soon {
+  background: #ffd6cc;
+}
+
+.reaction-result {
+  min-height: 1.4em;
+  margin: 10px 0 0;
+  font-weight: 700;
+}
+
+.balloon-zone {
+  position: relative;
+  height: 230px;
+  border-radius: 14px;
+  border: 2px solid rgba(37, 50, 74, 0.2);
+  background: linear-gradient(180deg, #f8fbff 0%, #d8f0ff 100%);
+  overflow: hidden;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -70px;
+  border: 0;
+  border-radius: 50% 50% 48% 48%;
+  cursor: pointer;
+  animation-name: balloon-rise;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -14px;
+  width: 2px;
+  height: 14px;
+  background: rgba(37, 50, 74, 0.45);
 }
 
 .footer {
@@ -234,8 +348,18 @@ li {
   }
 }
 
-@media (max-width: 860px) {
-  .grid {
+@keyframes balloon-rise {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-330px);
+  }
+}
+
+@media (max-width: 960px) {
+  .grid,
+  .games-grid {
     grid-template-columns: 1fr;
   }
 

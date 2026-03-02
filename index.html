@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -23,11 +23,11 @@
         <h1>안녕! 나는 박채은이야</h1>
         <p class="intro">
           내 개인 사이트에 온 걸 환영해!<br />
-          내가 좋아하는 것, 꿈, 하루를 소개할게!
+          내가 좋아하는 것, 꿈, 미니게임을 소개할게!
         </p>
         <div class="button-row">
           <a href="#favorites" class="button">좋아하는 것 보기</a>
-          <a href="#dream" class="button button-alt">내 꿈 보기</a>
+          <a href="#games" class="button button-alt">미니게임 하러 가기</a>
         </div>
       </section>
 
@@ -60,13 +60,49 @@
         </article>
       </section>
 
-      <section class="card reveal delay-4">
-        <h2>나의 하루</h2>
-        <div class="timeline">
-          <div><span>아침</span> 학교 갈 준비하기</div>
-          <div><span>점심</span> 친구들이랑 급식 먹기</div>
-          <div><span>오후</span> 재미있는 수업 듣기</div>
-          <div><span>저녁</span> 숙제하고 좋아하는 것 하기</div>
+      <section id="games" class="card reveal delay-4">
+        <h2>미니게임 3종</h2>
+        <p class="games-help">아래 버튼을 누르고 바로 놀아봐!</p>
+        <div class="games-grid">
+          <article class="game-panel">
+            <h3>두더지 잡기</h3>
+            <div class="game-meta">
+              <span id="mole-score">점수: 0</span>
+              <span id="mole-time">남은 시간: 20초</span>
+            </div>
+            <button id="mole-start" class="button game-btn" type="button">시작</button>
+            <div id="mole-board" class="mole-board" aria-label="두더지 게임판">
+              <button type="button" class="mole-hole" data-hole="0">빈 구멍</button>
+              <button type="button" class="mole-hole" data-hole="1">빈 구멍</button>
+              <button type="button" class="mole-hole" data-hole="2">빈 구멍</button>
+              <button type="button" class="mole-hole" data-hole="3">빈 구멍</button>
+              <button type="button" class="mole-hole" data-hole="4">빈 구멍</button>
+              <button type="button" class="mole-hole" data-hole="5">빈 구멍</button>
+              <button type="button" class="mole-hole" data-hole="6">빈 구멍</button>
+              <button type="button" class="mole-hole" data-hole="7">빈 구멍</button>
+              <button type="button" class="mole-hole" data-hole="8">빈 구멍</button>
+            </div>
+          </article>
+
+          <article class="game-panel">
+            <h3>반응속도 테스트</h3>
+            <p class="game-tip">시작 버튼을 누르고, 초록색으로 바뀌면 클릭!</p>
+            <button id="reaction-start" class="button game-btn" type="button">시작</button>
+            <button id="reaction-box" class="reaction-box waiting" type="button">
+              시작 버튼을 먼저 눌러줘
+            </button>
+            <p id="reaction-result" class="reaction-result">기록: 아직 없음</p>
+          </article>
+
+          <article class="game-panel">
+            <h3>풍선 터뜨리기</h3>
+            <div class="game-meta">
+              <span id="balloon-score">점수: 0</span>
+              <span id="balloon-time">남은 시간: 20초</span>
+            </div>
+            <button id="balloon-start" class="button game-btn" type="button">시작</button>
+            <div id="balloon-zone" class="balloon-zone" aria-label="풍선 터뜨리기 게임판"></div>
+          </article>
         </div>
       </section>
 
@@ -74,5 +110,7 @@
         <p>Made by 박채은 with GitHub Pages</p>
       </footer>
     </main>
+
+    <script src="./script.js"></script>
   </body>
 </html>
