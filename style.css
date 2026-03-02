@@ -591,6 +591,102 @@ body.story-view {
   width: 100%;
 }
 
+.game-comments {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 2px dashed rgba(31, 41, 72, 0.16);
+}
+
+.game-comment-title {
+  margin: 0 0 8px;
+  font-family: "Jua", sans-serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+}
+
+.game-comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.game-comment-item {
+  border: 2px solid rgba(31, 41, 72, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.84);
+  padding: 8px 10px;
+}
+
+.game-comment-author {
+  display: block;
+  margin-bottom: 4px;
+  font-family: "Jua", sans-serif;
+}
+
+.game-comment-body {
+  margin: 0;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.game-comment-empty {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+}
+
+.game-comment-form {
+  display: grid;
+  gap: 7px;
+}
+
+.game-comment-label {
+  font-weight: 700;
+}
+
+.game-comment-input,
+.game-comment-textarea {
+  width: 100%;
+  border: 2px solid rgba(31, 41, 72, 0.18);
+  border-radius: 10px;
+  padding: 8px;
+  font: inherit;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.game-comment-textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.game-comment-input:focus-visible,
+.game-comment-textarea:focus-visible {
+  outline: 3px solid #4476ff;
+  outline-offset: 2px;
+}
+
+.game-comment-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.game-comment-status {
+  margin: 0;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.game-comment-status.error {
+  color: #c93d2a;
+}
+
+.game-comment-status.success {
+  color: #1f8f52;
+}
+
 .mole-board {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -834,6 +930,14 @@ body.story-view {
   .story-nav .button {
     min-width: 0;
     flex: 1 1 100%;
+  }
+
+  .game-comment-row .button {
+    flex: 1 1 100%;
+  }
+
+  .game-comment-status {
+    width: 100%;
   }
 
   .comment-form-row .button {

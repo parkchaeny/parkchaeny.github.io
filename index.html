@@ -96,6 +96,35 @@
               <button type="button" class="mole-hole" data-hole="7">빈 구멍</button>
               <button type="button" class="mole-hole" data-hole="8">빈 구멍</button>
             </div>
+            <section class="game-comments" data-comment-scope="game-mole" data-score-source="mole-score">
+              <h4 class="game-comment-title">댓글</h4>
+              <ul class="game-comment-list"></ul>
+              <p class="game-comment-empty">아직 댓글이 없어!</p>
+              <form class="game-comment-form">
+                <label class="game-comment-label" for="game-mole-nickname">닉네임</label>
+                <input
+                  id="game-mole-nickname"
+                  class="game-comment-input"
+                  name="nickname"
+                  type="text"
+                  maxlength="20"
+                  placeholder="익명"
+                />
+                <label class="game-comment-label" for="game-mole-body">댓글</label>
+                <textarea
+                  id="game-mole-body"
+                  class="game-comment-textarea"
+                  name="body"
+                  maxlength="500"
+                  required
+                  placeholder="점수랑 같이 댓글 남겨줘!"
+                ></textarea>
+                <div class="game-comment-row">
+                  <button class="button" type="submit">등록</button>
+                  <p class="game-comment-status" aria-live="polite"></p>
+                </div>
+              </form>
+            </section>
           </article>
 
           <article class="game-panel">
@@ -106,6 +135,39 @@
               시작 버튼을 먼저 눌러줘
             </button>
             <p id="reaction-result" class="reaction-result">기록: 아직 없음</p>
+            <section
+              class="game-comments"
+              data-comment-scope="game-reaction"
+              data-score-source="reaction-result"
+            >
+              <h4 class="game-comment-title">댓글</h4>
+              <ul class="game-comment-list"></ul>
+              <p class="game-comment-empty">아직 댓글이 없어!</p>
+              <form class="game-comment-form">
+                <label class="game-comment-label" for="game-reaction-nickname">닉네임</label>
+                <input
+                  id="game-reaction-nickname"
+                  class="game-comment-input"
+                  name="nickname"
+                  type="text"
+                  maxlength="20"
+                  placeholder="익명"
+                />
+                <label class="game-comment-label" for="game-reaction-body">댓글</label>
+                <textarea
+                  id="game-reaction-body"
+                  class="game-comment-textarea"
+                  name="body"
+                  maxlength="500"
+                  required
+                  placeholder="기록이랑 같이 댓글 남겨줘!"
+                ></textarea>
+                <div class="game-comment-row">
+                  <button class="button" type="submit">등록</button>
+                  <p class="game-comment-status" aria-live="polite"></p>
+                </div>
+              </form>
+            </section>
           </article>
 
           <article class="game-panel">
@@ -116,6 +178,39 @@
             </div>
             <button id="balloon-start" class="button game-btn" type="button">시작</button>
             <div id="balloon-zone" class="balloon-zone" aria-label="풍선 터뜨리기 게임판"></div>
+            <section
+              class="game-comments"
+              data-comment-scope="game-balloon"
+              data-score-source="balloon-score"
+            >
+              <h4 class="game-comment-title">댓글</h4>
+              <ul class="game-comment-list"></ul>
+              <p class="game-comment-empty">아직 댓글이 없어!</p>
+              <form class="game-comment-form">
+                <label class="game-comment-label" for="game-balloon-nickname">닉네임</label>
+                <input
+                  id="game-balloon-nickname"
+                  class="game-comment-input"
+                  name="nickname"
+                  type="text"
+                  maxlength="20"
+                  placeholder="익명"
+                />
+                <label class="game-comment-label" for="game-balloon-body">댓글</label>
+                <textarea
+                  id="game-balloon-body"
+                  class="game-comment-textarea"
+                  name="body"
+                  maxlength="500"
+                  required
+                  placeholder="점수랑 같이 댓글 남겨줘!"
+                ></textarea>
+                <div class="game-comment-row">
+                  <button class="button" type="submit">등록</button>
+                  <p class="game-comment-status" aria-live="polite"></p>
+                </div>
+              </form>
+            </section>
           </article>
         </div>
       </section>
@@ -156,6 +251,7 @@
       </footer>
     </main>
 
+    <script type="module" src="./game-comments.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
