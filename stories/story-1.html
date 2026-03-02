@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="../style.css" />
   </head>
-  <body class="story-view">
+  <body class="story-view" data-story-slug="story-1">
     <main class="story-page">
       <section class="card">
         <p class="series-title">연재 제목: 꼬마 덜렁이</p>
@@ -29,10 +29,42 @@
         </p>
       </section>
 
+      <section class="card comments-section">
+        <h2>댓글</h2>
+        <p class="comment-help">응원이나 감상을 남겨줘!</p>
+        <ul id="comment-list" class="comment-list"></ul>
+        <p id="comment-empty" class="comment-empty">아직 댓글이 없어. 첫 댓글을 남겨줘!</p>
+        <form id="comment-form" class="comment-form">
+          <label class="comment-label" for="comment-nickname">닉네임</label>
+          <input
+            id="comment-nickname"
+            class="comment-input"
+            name="nickname"
+            type="text"
+            maxlength="20"
+            placeholder="익명"
+          />
+          <label class="comment-label" for="comment-body">댓글</label>
+          <textarea
+            id="comment-body"
+            class="comment-textarea"
+            name="body"
+            maxlength="500"
+            required
+            placeholder="댓글을 써줘!"
+          ></textarea>
+          <div class="comment-form-row">
+            <button class="button" type="submit">댓글 등록</button>
+            <p id="comment-status" class="comment-status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
       <section class="card story-nav">
         <a class="button" href="../index.html#story-series">게시판으로</a>
         <a class="button button-alt" href="./story-2.html">다음 화 보기</a>
       </section>
     </main>
+    <script type="module" src="../comments.js"></script>
   </body>
 </html>

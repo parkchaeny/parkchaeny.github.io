@@ -15,3 +15,12 @@
 4. 저장하고 1~2분 기다리면 사이트가 열려요.
 
 사이트 주소 예시: `https://사용자이름.github.io/저장소이름/`
+
+## 댓글 기능(Supabase) 설정
+1. Supabase 프로젝트에서 `Authentication -> Providers -> Anonymous`를 켜요.
+2. Supabase SQL Editor에서 `supabase_comments_setup.sql` 내용을 실행해요.
+3. 1화/2화/3화 페이지는 이미 댓글 기능이 연결되어 있어요:
+   - `stories/story-1.html`
+   - `stories/story-2.html`
+   - `stories/story-3.html`
+4. 댓글 클라이언트 코드는 `comments.js`에 있어요.

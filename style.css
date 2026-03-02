@@ -437,6 +437,104 @@ body.story-view {
   min-width: 138px;
 }
 
+.comments-section h2 {
+  margin-bottom: 8px;
+}
+
+.comment-help {
+  margin: 0 0 10px;
+  color: var(--ink-soft);
+}
+
+.comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.comment-item {
+  border: 2px solid rgba(31, 41, 72, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 10px 12px;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.comment-author {
+  font-family: "Jua", sans-serif;
+}
+
+.comment-body {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.comment-empty {
+  margin: 0 0 10px;
+  color: var(--ink-soft);
+}
+
+.comment-form {
+  display: grid;
+  gap: 8px;
+}
+
+.comment-label {
+  font-weight: 700;
+}
+
+.comment-input,
+.comment-textarea {
+  width: 100%;
+  border: 2px solid rgba(31, 41, 72, 0.18);
+  border-radius: 12px;
+  padding: 10px;
+  font: inherit;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.comment-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.comment-input:focus-visible,
+.comment-textarea:focus-visible {
+  outline: 3px solid #4476ff;
+  outline-offset: 2px;
+}
+
+.comment-form-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.comment-status {
+  margin: 0;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.comment-status.error {
+  color: #c93d2a;
+}
+
+.comment-status.success {
+  color: #1f8f52;
+}
+
 .games-help {
   margin: 0 0 12px;
   color: var(--ink-soft);
@@ -736,6 +834,14 @@ body.story-view {
   .story-nav .button {
     min-width: 0;
     flex: 1 1 100%;
+  }
+
+  .comment-form-row .button {
+    flex: 1 1 100%;
+  }
+
+  .comment-status {
+    width: 100%;
   }
 
   .story-page {
